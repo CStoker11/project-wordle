@@ -13,7 +13,7 @@ function GuessBox({ guesses, setGuesses }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="guess-input-wrapper" onSubmit={handleSubmit}>
       <label htmlFor="guess">Enter Guess: </label>
       <input
         id="guess"
