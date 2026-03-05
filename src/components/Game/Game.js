@@ -51,6 +51,7 @@ function Game() {
       </div>
       <PreviousGuesses guesses={guesses} />
       <GuessBox
+        userWins={userWins}
         setSubmittedGuess={setSubmittedGuess}
         guesses={guesses}
         setGuesses={setGuesses}

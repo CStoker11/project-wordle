@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 
-function GuessBox({ setSubmittedGuess, guesses, setGuesses }) {
+function GuessBox({ userWins, setSubmittedGuess, guesses, setGuesses }) {
   const [guess, setGuess] = useState("");
 
   const handleSubmit = (e) => {
@@ -26,7 +26,7 @@ function GuessBox({ setSubmittedGuess, guesses, setGuesses }) {
         onChange={(e) => {
           setGuess(e.target.value);
         }}
-        disabled={guesses.length == NUM_OF_GUESSES_ALLOWED}
+        disabled={guesses.length == NUM_OF_GUESSES_ALLOWED || userWins}
       />
     </form>
   );
