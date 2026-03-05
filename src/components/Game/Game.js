@@ -21,7 +21,11 @@ function Game() {
       <div className="guess-results">
         {grid.map((guess, index) => {
           return (
-            <Guess key={index} guessedWord={guesses[index]?.value || ""} />
+            <Guess
+              key={index}
+              answer={answer}
+              guessedWord={guesses[index]?.value || ""}
+            />
           );
         })}
       </div>

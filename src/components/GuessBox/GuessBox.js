@@ -5,6 +5,10 @@ function GuessBox({ guesses, setGuesses }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (guess.length != 5) {
+      setGuess("");
+      return;
+    }
     const newGuess = { value: guess, id: crypto.randomUUID() };
     const newGuesses = [...guesses, newGuess];
     setGuesses(newGuesses);
