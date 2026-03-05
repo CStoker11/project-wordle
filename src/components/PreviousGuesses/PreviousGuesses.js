@@ -1,7 +1,6 @@
 import React from "react";
 
 function PreviousGuesses({ guesses }) {
-  console.log(guesses);
   return (
     <div className="guess-results">
       {guesses.map((guess, index) => {

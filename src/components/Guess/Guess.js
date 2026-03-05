@@ -2,7 +2,6 @@ import React from "react";
 import { checkGuess } from "../../game-helpers";
 
 function Guess({ answer, guessedWord }) {
-  const guessArray = [...guessedWord.toUpperCase()];
   const checkedResult = checkGuess(guessedWord, answer);
   return (
     <p className="guess">
