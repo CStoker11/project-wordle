@@ -1,14 +1,14 @@
 import { React, useState } from "react";
 
-function GuessBox() {
+function GuessBox({ guesses, setGuesses }) {
   const [guess, setGuess] = useState("");
-  const [guesses, setGuesses] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newGuesses = [...guesses, guess];
+    const newGuess = { value: guess, id: crypto.randomUUID() };
+    const newGuesses = [...guesses, newGuess];
     setGuesses(newGuesses);
-    console.log(guesses);
+    console.log(newGuess);
     setGuess("");
   };
 
@@ -21,7 +21,7 @@ function GuessBox() {
         onChange={(e) => {
           setGuess(e.target.value);
         }}
-      ></input>
+      />
     </form>
   );
 }
